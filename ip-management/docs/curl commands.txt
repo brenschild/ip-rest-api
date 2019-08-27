@@ -1,0 +1,11 @@
+# get all IPs
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/ip
+
+#Add all IPs in CIDR block
+curl -i -H "Content-Type: application/json" -X POST localhost:8080/create?ip_address=10.0.1.0/24
+
+#Acquire an IP
+curl -i -H "Content-Type: application/json" -X PUT localhost:8080/acquire?ip_address=10.0.1.0/24
+
+#Release an IP
+curl -i -H "Content-Type: application/json" -X PUT localhost:8080/release?ip_address=10.0.1.0/24
